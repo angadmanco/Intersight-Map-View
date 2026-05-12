@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersight Server Map View</title>
+    <link rel="stylesheet" href="styles.css?v=22" />
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="top-nav" aria-label="Global navigation">
+        <div class="brand-lockup">
+          <div class="cisco-mark" aria-hidden="true">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <span class="cisco-word">cisco</span>
+          </div>
+          <span class="brand-name">Intersight</span>
+        </div>
+
+        <div class="global-search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.5" cy="10.5" r="6.8" />
+            <path d="m16 16 4.2 4.2" />
+          </svg>
+          <input type="search" aria-label="Global search" value="aa" />
+          <button class="search-clear" type="button" aria-label="Clear global search" title="Clear">
+            <svg class="clear-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8.3 8.3 7.4 7.4M15.7 8.3l-7.4 7.4" /></svg>
+          </button>
+        </div>
+
+        <div class="nav-actions" aria-label="System actions">
+          <button type="button" title="Refresh" aria-label="Refresh">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 5v5h-5" /><path d="M19.1 13.1A7.2 7.2 0 1 1 17 7.2L20 10" /></svg>
+          </button>
+          <button type="button" title="Tasks" aria-label="Tasks">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4" /><path d="m8.2 12.2 2.4 2.5 5.3-5.4" /></svg>
+          </button>
+          <button type="button" title="Announcements" aria-label="Announcements">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5v3.2a1.2 1.2 0 0 0 1.2 1.2h2.4l7.4 3.6v-12l-7.4 4H5.2A1.2 1.2 0 0 0 4 10.5Z" /><path d="M7.8 15.1 9.2 20" /><path d="M18.2 9.1a4.6 4.6 0 0 1 0 6.8" /></svg>
+            <span class="badge soft">50</span>
+          </button>
+          <button type="button" title="Alerts" aria-label="Alerts">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 15.8v-4.6a6 6 0 0 0-12 0v4.6l-2 2.4h16l-2-2.4Z" /><path d="M9.7 20a2.6 2.6 0 0 0 4.6 0" /></svg>
+            <span class="badge danger"><svg class="badge-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 7.8v5.2M12 16.5h.1" /></svg>2322</span>
+            <span class="badge warn"><svg class="badge-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 21 20H3L12 4Z" /><path d="M12 9.5v4.8M12 17h.1" /></svg>153</span>
+          </button>
+          <button type="button" title="Help" aria-label="Help">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.3" /><path d="M9.8 9.5a2.3 2.3 0 1 1 3.5 2c-.9.6-1.3 1.1-1.3 2.3" /><path d="M12 17.2h.1" /></svg>
+          </button>
+          <span class="nav-divider"></span>
+          <button type="button" title="User" aria-label="User">
+            <svg class="header-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8" /><path d="M4.8 21a7.2 7.2 0 0 1 14.4 0" /></svg>
+          </button>
+        </div>
+      </header>
+
+      <aside class="side-nav" aria-label="Product navigation">
+        <button class="hamburger" type="button" aria-label="Collapse navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <nav>
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z" /></svg>
+            Dashboard
+          </a>
+          <a href="#" class="nav-item active">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 6v6c0 4.4 3.4 8.5 8 10 4.6-1.5 8-5.6 8-10V6l-8-4Zm0 4.1 3.4 1.7-3.4 1.7-3.4-1.7L12 6.1Zm0 4.9 4-2v3.1c0 2.5-1.6 5-4 6.3-2.4-1.3-4-3.8-4-6.3V9l4 2Z" /></svg>
+            Operate
+            <span class="chevron">›</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 19.6 19.6 22l-6.7-6.7a6.5 6.5 0 0 1-8.2-8.2L9 11.4 11.4 9 7.1 4.7a6.5 6.5 0 0 1 8.2 8.2L22 19.6Z" /></svg>
+            Configure
+            <span class="chevron">›</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16v2H4v-2Zm1-3 4-5 3 3.5L17 8l2 2.4-6.8 7.6-3.1-3.6L6.6 18 5 16Z" /></svg>
+            Analyze
+            <span class="chevron">›</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v4h4v10h-4v4H7v-4H3V7h4V3Zm2 2v4H5v6h4v4h6v-4h4V9h-4V5H9Zm3 5a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" /></svg>
+            Automate
+            <span class="chevron">›</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-8V4.1A9.8 9.8 0 0 0 12 3Zm2 0v7h7a9 9 0 0 0-7-7Z" /></svg>
+            Optimize
+            <span class="chevron">›</span>
+          </a>
+        </nav>
+        <nav class="nav-secondary">
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-8 8c0-3.3 3.6-6 8-6s8 2.7 8 6v1H4v-1Z" /></svg>
+            System
+            <span class="chevron">›</span>
+          </a>
+          <a href="#" class="nav-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19.4 13.5.1-1.5-.1-1.5 2.1-1.6-2-3.5-2.5 1a8.4 8.4 0 0 0-2.6-1.5L14 2h-4l-.4 2.9A8.4 8.4 0 0 0 7 6.4l-2.5-1-2 3.5 2.1 1.6-.1 1.5.1 1.5-2.1 1.6 2 3.5 2.5-1a8.4 8.4 0 0 0 2.6 1.5L10 22h4l.4-2.9a8.4 8.4 0 0 0 2.6-1.5l2.5 1 2-3.5-2.1-1.6ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" /></svg>
+            Settings
+            <span class="chevron">›</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <h1>Servers</h1>
+
+        <section class="servers-shell" aria-label="Servers map view">
+          <div class="view-tabs">
+            <button class="tab active" type="button">
+              All Servers
+              <svg class="tab-gear" viewBox="0 0 24 24" aria-hidden="true"><path d="m19.4 13.5.1-1.5-.1-1.5 2.1-1.6-2-3.5-2.5 1a8.4 8.4 0 0 0-2.6-1.5L14 2h-4l-.4 2.9A8.4 8.4 0 0 0 7 6.4l-2.5-1-2 3.5 2.1 1.6-.1 1.5.1 1.5-2.1 1.6 2 3.5 2.5-1a8.4 8.4 0 0 0 2.6 1.5L10 22h4l.4-2.9a8.4 8.4 0 0 0 2.6-1.5l2.5 1 2-3.5-2.1-1.6ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" /></svg>
+            </button>
+            <button class="tab" type="button">My Custom View Tab 1</button>
+            <button class="tab" type="button">My Custom View Tab 2</button>
+            <button class="tab add-tab" type="button" aria-label="Add view">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z" /></svg>
+            </button>
+          </div>
+
+          <div class="toolbar">
+            <div class="toolbar-left">
+              <button class="icon-plain" type="button" aria-label="More actions" title="More actions">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" /></svg>
+              </button>
+              <button class="icon-plain tag-action" type="button" aria-label="Tag selected servers" title="Tag selected servers">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V4h9l8.6 8.6a2 2 0 0 1 0 2.8ZM5 6v6.2l7 7 7.2-7.2L11.8 6H5Zm3.5 4A1.5 1.5 0 1 1 8.5 7a1.5 1.5 0 0 1 0 3Z" /></svg>
+              </button>
+              <span class="toolbar-divider" aria-hidden="true"></span>
+              <div class="server-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 18.1a7.3 7.3 0 1 1 5.15-2.14l4.04 4.04-1.43 1.42-4.03-4.03a7.27 7.27 0 0 1-3.73.71Zm0-2a5.3 5.3 0 1 0 0-10.6 5.3 5.3 0 0 0 0 10.6Z" /></svg>
+                <input id="server-search" type="search" placeholder="Search" autocomplete="off" />
+              </div>
+              <button class="filter-link" id="filter-toggle" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4V6Zm3 5h10v2H7v-2Zm3 5h4v2h-4v-2Z" /></svg>
+                Filters
+              </button>
+              <span class="results-count" id="results-count">80 results</span>
+            </div>
+
+            <div class="toolbar-right">
+              <button class="export-button" id="export-button" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14v-8h-2v6H7v-6H5v8ZM13 4v8h3l-4 4-4-4h3V4h2Z" /></svg>
+                Export
+              </button>
+              <div class="view-switcher" aria-label="View switcher">
+                <button type="button" data-mode="table" aria-label="Table only">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h3v3H4V5Zm5 0h11v3H9V5ZM4 10.5h3v3H4v-3Zm5 0h11v3H9v-3ZM4 16h3v3H4v-3Zm5 0h11v3H9v-3Z" /></svg>
+                </button>
+                <button class="active" type="button" data-mode="split" aria-label="Split view">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v14H4V5Zm9 0h7v14h-7V5ZM6 7v10h3V7H6Zm9 0v10h3V7h-3Z" /></svg>
+                </button>
+                <button type="button" data-mode="map" aria-label="Map view">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5 4-2v15l-4 2-6-2-4 2V5l4-2 6 2Zm-1 2-4-1.3v10.6l4 1.3V7Zm2 .2v10.5l1-.5V6.7l-1 .5ZM8 5.7l-1 .5v10.5l1-.5V5.7Z" /></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-panel" id="filter-panel" hidden>
+            <label><input type="checkbox" value="Healthy" checked /> Healthy</label>
+            <label><input type="checkbox" value="Warning" checked /> Warning</label>
+            <label><input type="checkbox" value="Critical" checked /> Critical</label>
+          </div>
+
+          <section class="attention-widgets" aria-label="Attention widgets">
+            <article class="metric-widget widget-health">
+              <h2>Health</h2>
+              <div class="donut-row compact">
+                <div class="donut health-donut" aria-label="Health count">
+                  <span>80</span>
+                </div>
+                <div class="legend">
+                  <span><i class="dot critical"></i>Critical</span>
+                  <span><i class="dot warning"></i>Warning</span>
+                  <span><i class="dot healthy"></i>Healthy</span>
+                </div>
+              </div>
+            </article>
+            <article class="metric-widget widget-power">
+              <h2>Power</h2>
+              <div class="pill-grid">
+                <span class="metric-pill critical"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v10h-2V2Zm5 3.4 1.4-1.4A9 9 0 1 1 6.6 4L8 5.4A7 7 0 1 0 16 5.4Z" /></svg>Off <strong>28</strong></span>
+                <span class="metric-pill healthy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v10h-2V2Zm5 3.4 1.4-1.4A9 9 0 1 1 6.6 4L8 5.4A7 7 0 1 0 16 5.4Z" /></svg>On <strong>50</strong></span>
+              </div>
+            </article>
+            <article class="metric-widget widget-hcl">
+              <h2>HCL Status</h2>
+              <div class="pill-grid two-up">
+                <span class="metric-pill neutral"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 17h2v-2h-2v2Zm1-14a7 7 0 0 0-7 7h2a5 5 0 1 1 6.1 4.9c-1.3.3-2.1 1.3-2.1 2.6v.5h2v-.5c0-.4.2-.6.7-.8A7 7 0 0 0 12 3Z" /></svg>Incomplete <strong>46</strong></span>
+                <span class="metric-pill neutral"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.3 3 21 19.7 19.7 21 3 4.3 4.3 3ZM12 5a7 7 0 0 1 7 7c0 1.3-.4 2.6-1 3.6L15.9 13.5A5 5 0 0 0 10.5 8.1L8.4 6A7 7 0 0 1 12 5ZM5 12c0-1.3.4-2.6 1-3.6l2.1 2.1A5 5 0 0 0 13.5 16l2.1 2.1A7 7 0 0 1 5 12Z" /></svg>Not Evaluated <strong>5</strong></span>
+                <span class="metric-pill warning"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 21h20L12 3Zm1 13h-2V9h2v7Zm0 3h-2v-2h2v2Z" /></svg>Not Listed <strong>26</strong></span>
+                <span class="metric-pill healthy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10.1 14.8 6.7-6.7 1.4 1.4-8.1 8.1-4.3-4.3 1.4-1.4 2.9 2.9Z" /></svg>Validated <strong>3</strong></span>
+              </div>
+            </article>
+            <article class="metric-widget widget-conformance">
+              <h2>Custom HCL Conformance</h2>
+              <div class="pill-grid">
+                <span class="metric-pill healthy">Conforming Servers <strong>3</strong></span>
+                <span class="metric-pill critical">Non Conforming S... <strong>77</strong></span>
+              </div>
+            </article>
+            <article class="metric-widget widget-bundle">
+              <h2>Bundle Version</h2>
+              <div class="donut-row compact">
+                <div class="donut bundle-donut" aria-label="Bundle version count">
+                  <span>67</span>
+                </div>
+                <div class="legend legend-tight">
+                  <span><i class="dot purple"></i>5.4(0.250047</span>
+                  <span><i class="dot teal"></i>6.0(2.260040</span>
+                  <span><i class="dot violet"></i>4.2(2a) 5</span>
+                  <span><i class="dot magenta"></i>5.2(2.240051;</span>
+                  <span><i class="dot olive"></i>Other 36</span>
+                </div>
+              </div>
+            </article>
+            <article class="metric-widget widget-storage">
+              <h2>Utility Storage</h2>
+              <div class="pill-grid">
+                <span class="metric-pill info">No <strong>68</strong></span>
+                <span class="metric-pill blue">Yes <strong>12</strong></span>
+              </div>
+            </article>
+            <article class="metric-widget widget-firmware">
+              <h2>Firmware Version</h2>
+              <div class="donut-row compact">
+                <div class="donut firmware-donut" aria-label="Firmware version count">
+                  <span>78</span>
+                </div>
+                <div class="legend legend-tight">
+                  <span><i class="dot purple"></i>5.4(0.250047</span>
+                  <span><i class="dot teal"></i>6.0(2.260040</span>
+                  <span><i class="dot violet"></i>5.2(2.240051;</span>
+                  <span><i class="dot magenta"></i>4.2(2a) 5</span>
+                  <span><i class="dot olive"></i>Other 43</span>
+                </div>
+              </div>
+            </article>
+            <article class="metric-widget widget-models">
+              <h2>Models</h2>
+              <div class="donut-row compact">
+                <div class="donut models-donut" aria-label="Models count">
+                  <span>80</span>
+                </div>
+                <div class="legend legend-tight">
+                  <span><i class="dot purple"></i>B200 M5 18</span>
+                  <span><i class="dot teal"></i>UCSX 210C-M6</span>
+                  <span><i class="dot violet"></i>UCSX 210C-M7</span>
+                  <span><i class="dot magenta"></i>Other 42</span>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <div class="split-workspace" id="split-workspace">
+            <section class="server-table-panel" aria-label="Servers table">
+              <div class="server-table" id="server-table"></div>
+              <footer class="table-footer">
+                <span>Rows per page</span>
+                <button class="page-size" type="button">10 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5H7Z" /></svg></button>
+                <span>1 of 1</span>
+                <button class="page-arrow" type="button" aria-label="Previous page" disabled>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6v12Z" /></svg>
+                </button>
+                <button class="page-number" type="button">1</button>
+                <button class="page-arrow" type="button" aria-label="Next page" disabled>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6V6Z" /></svg>
+                </button>
+              </footer>
+            </section>
+
+            <div
+              class="resizer"
+              id="split-resizer"
+              role="separator"
+              aria-label="Resize table and map"
+              aria-orientation="vertical"
+              aria-valuemin="540"
+              aria-valuemax="1082"
+              aria-valuenow="767"
+              tabindex="0"
+            >
+              <span></span>
+            </div>
+
+            <section class="map-panel" aria-label="Server map">
+              <div class="map-canvas" id="map-canvas">
+                <svg class="map-art" viewBox="0 0 735 597" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <pattern id="minorGrid" width="58" height="58" patternUnits="userSpaceOnUse">
+                      <path d="M58 0H0V58" fill="none" stroke="#e2e8ef" stroke-width="1" />
+                    </pattern>
+                    <linearGradient id="waterGradient" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stop-color="#9ad5e5" />
+                      <stop offset="1" stop-color="#6dc7df" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="735" height="597" fill="#eef3f7" />
+                  <rect width="735" height="597" fill="url(#minorGrid)" opacity=".55" />
+                  <path class="water" d="M588 0h147v597H507c25-60 47-114 38-182-9-68 20-113 65-151 49-42 52-88 9-136-29-33-37-76-31-128Z" />
+                  <path class="park" d="M35 0c48 47 126 54 178 23 32-19 76-9 103 20 28 31 25 78-7 112-37 39-84 33-132 26-58-8-107 24-135 74-26 47-22 105 13 145 30 35 71 34 109 16 50-24 94-8 120 30 29 43 25 98-9 151H0V0h35Z" />
+                  <path class="park small" d="M480 318c61 12 102 53 95 104-7 48-61 78-116 62-48-14-79-54-66-99 12-41 41-76 87-67Z" />
+                  <g class="roads major">
+                    <path d="M-10 65C97 71 156 130 243 148c122 25 208-34 327-4 51 13 104 43 173 33" />
+                    <path d="M-10 254c66-32 139-44 215-35 91 11 143 54 212 72 91 24 165-8 329-15" />
+                    <path d="M160-10c8 60 31 111 68 151 43 47 65 97 58 151-8 68-52 122-92 177-28 38-39 82-21 137" />
+                    <path d="M368-10c-14 105-6 176 27 213 46 52 56 103 31 153-23 46-31 92-16 137 13 39 51 73 91 109" />
+                    <path d="M645-10c-6 82-34 143-84 185-48 40-56 91-24 151 34 64 43 133 24 207" />
+                  </g>
+                  <g class="roads">
+                    <path d="M-10 126c84 10 145 44 214 78 82 41 166 44 250 10 66-27 150-24 289 18" />
+                    <path d="M6 348c99-31 181-25 245 18 65 43 129 43 192 0 72-50 168-47 292 6" />
+                    <path d="M44 556c70-49 119-104 148-166 31-66 86-109 166-130 83-22 161-63 235-123" />
+                    <path d="M78-10c64 92 107 163 130 211 24 49 33 105 28 169-6 70 13 146 58 227" />
+                    <path d="M520-10c-13 76-5 139 23 189 33 58 38 115 15 171-24 59-12 138 36 237" />
+                  </g>
+                  <g class="route-badges">
+                    <text x="133" y="126">78</text>
+                    <text x="249" y="178">22</text>
+                    <text x="318" y="286">278</text>
+                    <text x="440" y="164">95</text>
+                    <text x="584" y="81">95</text>
+                    <text x="612" y="386">278</text>
+                    <text x="269" y="382">95</text>
+                    <text x="111" y="506">27</text>
+                  </g>
+                  <g class="map-labels">
+                    <text class="city large" x="448" y="76">Newark</text>
+                    <text class="city" x="61" y="113">Millburn</text>
+                    <text class="city" x="185" y="113">Irvington</text>
+                    <text class="city" x="203" y="414">Linden</text>
+                    <text class="city" x="70" y="309">Cranford</text>
+                    <text class="city" x="392" y="259">Elizabeth</text>
+                    <text class="city" x="587" y="251">Bayonne</text>
+                    <text class="water-label" x="690" y="165" transform="rotate(77 690 165)">Upper Bay</text>
+                    <text class="area" x="513" y="346">PORT RICHMOND</text>
+                    <text class="area" x="575" y="516">MIDLAND BEACH</text>
+                  </g>
+                </svg>
+
+                <div class="map-select">
+                  <button type="button" id="overlay-menu">
+                    <span>Overlay</span>
+                    <strong id="overlay-label">Health</strong>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5H7Z" /></svg>
+                  </button>
+                  <div class="overlay-options" id="overlay-options" hidden>
+                    <button type="button" data-overlay="Health">Health</button>
+                    <button type="button" data-overlay="Deployment">Deployment</button>
+                    <button type="button" data-overlay="Configuration">Configuration</button>
+                  </div>
+                </div>
+
+                <div class="map-controls">
+                  <button type="button" id="map-fit" aria-label="Fit map" title="Fit map">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v2H6v4H4V4Zm10 0h6v6h-2V6h-4V4ZM6 14v4h4v2H4v-6h2Zm12 4v-4h2v6h-6v-2h4Z" /></svg>
+                  </button>
+                  <button type="button" id="map-zoom-in" aria-label="Zoom in" title="Zoom in">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z" /></svg>
+                  </button>
+                  <button type="button" id="map-zoom-out" aria-label="Zoom out" title="Zoom out">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 11h14v2H5v-2Z" /></svg>
+                  </button>
+                  <button type="button" id="map-refresh" aria-label="Refresh map" title="Refresh map">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.7 6.3A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.76-4.24L13 11h8V3l-3.3 3.3Z" /></svg>
+                  </button>
+                  <button type="button" aria-label="Map info" title="Map info">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 17h2v-6h-2v6Zm0-8h2V7h-2v2Zm1-7a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z" /></svg>
+                  </button>
+                </div>
+
+                <button class="cluster-marker" id="cluster-marker" type="button" aria-label="3 critical servers near Elizabeth">
+                  <span class="cluster-halo"></span>
+                  <span class="cluster-count">3</span>
+                  <span class="cluster-muted">439</span>
+                </button>
+                <button class="location-marker critical loc-a" type="button" data-server="srv-2" aria-label="Critical server at Metrotech Center">
+                  <span>1</span>
+                  <strong>Metrotech Center</strong>
+                </button>
+                <button class="location-marker critical loc-b" type="button" data-server="srv-7" aria-label="Critical server at 50 East 5th Street">
+                  <span>2</span>
+                  <strong>50 E 5th St</strong>
+                </button>
+                <button class="location-marker critical loc-c" type="button" data-server="srv-9" aria-label="Critical server at 32 A 2th Street">
+                  <span>3</span>
+                  <strong>32 A 2th St</strong>
+                </button>
+                <button class="pin-marker critical" type="button" data-server="srv-2" aria-label="Critical server near Bayonne">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12v8H6V8Zm2 2v4h8v-4H8Zm2-7h4v3h-4V3Zm0 15h4v3h-4v-3Z" /></svg>
+                </button>
+                <button class="pin-marker healthy one" type="button" data-server="srv-1" aria-label="Healthy server near Port Richmond">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12v8H6V8Zm2 2v4h8v-4H8Zm2-7h4v3h-4V3Zm0 15h4v3h-4v-3Z" /></svg>
+                </button>
+                <button class="pin-marker healthy two" type="button" data-server="srv-6" aria-label="Healthy server near Staten Island">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12v8H6V8Zm2 2v4h8v-4H8Zm2-7h4v3h-4V3Zm0 15h4v3h-4v-3Z" /></svg>
+                </button>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <aside class="server-drawer" id="server-drawer" aria-label="Server details" hidden>
+      <header>
+        <div>
+          <p>Server details</p>
+          <h2 id="drawer-name">C220-WZP23230LGQ</h2>
+        </div>
+        <button type="button" id="drawer-close" aria-label="Close server details">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z" /></svg>
+        </button>
+      </header>
+      <div class="drawer-tabs">
+        <button class="active" type="button">Overview</button>
+        <button type="button">Inventory</button>
+        <button type="button">Events</button>
+      </div>
+      <dl id="drawer-pairs"></dl>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js?v=22"></script>
+  </body>
+</html>
